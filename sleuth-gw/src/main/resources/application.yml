@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: myroute
+        uri: http://localhost:8085          
+        predicates:        - Path=/get
+  sleuth:
+    reactor:
+      instrumentation-type: decorate-on-each  
+logging:  level:    '[reactor.netty.http]': debug              
